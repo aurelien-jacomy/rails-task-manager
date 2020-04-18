@@ -1,14 +1,23 @@
-<div class="container">
+<div class="container d-flex justify-content-between margin-top align-items-center">
 	<h1><%= @task.title %></h1>
+	<div>
+		<%= link_to "🖊 Edit this task", edit_path(@task), class: "btn btn-secondary" %>
+	</div>
 </div>
+
 
 <div class="container details">
 	<p><%= @task.details %></p>
 </div>
 
 <div class="container">
-	<input type="checkbox" name="completed">
-	<label for="completed"> This task as not been completed yet </label>
+	<% if @task.completed %>
+	  <input type="checkbox" name="completed" id="completed" checked>
+	  <label for="completed"> This task as been completed </label>
+	<% else %>
+      <input type="checkbox" name="completed" id="completed">
+      <label for="completed"> This task as not been completed yet </label>
+	<% end %>
 </div>
 
 <div class="container">

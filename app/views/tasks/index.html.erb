@@ -6,9 +6,22 @@
 	<ul class="check-list">
 		<% @tasks.each do |task| %>
 		  <li class="check-list">
+		  	<% if task.completed %>
 			  <input type="checkbox" name=<%= "#{task.id}" %>>
-			  <label for=<%= "#{task.id}" %>> <%= link_to "#{task.title}", task_path(task.id) %> </label>
+			<% else %>
+			  <input type="checkbox" name=<%= "#{task.id}" %> checked>
+			<% end %>
+			
+			<label for=<%= "#{task.id}" %>> <%= link_to "#{task.title}", task_path(task.id) %> </label>
+			<span> - </span>
+			<%= link_to "🗑", destroy_path(task), 
+			  method: :delete,
+			  data: { confirm: "Are you sure you want to delete this task?" } %>
 		  </li>
 		<% end %>
 	</ul>
+</div>
+
+<div class="container">
+	<%= link_to "Create New Task", new_path, class: "btn btn-primary" %>
 </div>

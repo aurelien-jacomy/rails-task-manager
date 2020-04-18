@@ -1,5 +1,13 @@
 <%= simple_form_for(task) do |form| %>
   <%= form.input :title %>
   <%= form.input :details %>
-  <%= form.submit %>
+  <% unless task.id.nil? %>
+	  <%= form.check_box :completed %>
+  	  <%= form.label :completed, "Click to mark task as completed"%> 
+  	  <br>
+  <% end %>
+  <%= form.submit class: "btn btn-primary"%>
+  <br>
+  <br>
+  <%= link_to "Back to Homepage", tasks_path %>
 <% end %>
