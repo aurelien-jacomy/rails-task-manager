@@ -1,6 +1,8 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@import "bootstrap/scss/bootstrap";
+
 .check-list {
 	list-style-type: none;
 	padding-left: 0px;
@@ -8,4 +10,11 @@
 
 .container {
 	margin: 20px;
+}
+
+.details {
+	background-color: rgb(200, 200, 200);
+	padding: 40px 20px;
+	border-radius: 4px;
+	font-style: italic;
 }

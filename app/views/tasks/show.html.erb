@@ -1,0 +1,16 @@
+<div class="container">
+	<h1><%= @task.title %></h1>
+</div>
+
+<div class="container details">
+	<p><%= @task.details %></p>
+</div>
+
+<div class="container">
+	<input type="checkbox" name="completed">
+	<label for="completed"> This task as not been completed yet </label>
+</div>
+
+<div class="container">
+	<%= link_to 'Back', tasks_path %>
+</div>

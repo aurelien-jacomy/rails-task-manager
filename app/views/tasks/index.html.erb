@@ -7,7 +7,7 @@
 		<% @tasks.each do |task| %>
 		  <li class="check-list">
 			  <input type="checkbox" name=<%= "#{task.id}" %>>
-			  <label for=<%= "#{task.id}" %>> <%= task.title %> </label>
+			  <label for=<%= "#{task.id}" %>> <%= link_to "#{task.title}", task_path(task.id) %> </label>
 		  </li>
 		<% end %>
 	</ul>
