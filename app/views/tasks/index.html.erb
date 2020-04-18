@@ -1,0 +1,14 @@
+<div class="container">
+	<h1>List of your Tasks</h1>
+</div>
+
+<div class="container">
+	<ul class="check-list">
+		<% @tasks.each do |task| %>
+		  <li class="check-list">
+			  <input type="checkbox" name=<%= "#{task.id}" %>>
+			  <label for=<%= "#{task.id}" %>> <%= task.title %> </label>
+		  </li>
+		<% end %>
+	</ul>
+</div>
